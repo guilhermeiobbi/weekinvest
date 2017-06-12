@@ -218,17 +218,20 @@ fieldset[disabled] .btn-xl.active {
 }
 @media (min-width: 768px) {
   .navbar-custom.affix {
-    background-color: #222222;
+    background-color: #a29a9a;
     padding: 10px 0;
   }
   .navbar-custom.affix .navbar-brand {
     font-size: 1.5em;
   }
+  .navbar-custom.affix .navbar-brand > img {
+    height: 100% !important;
+  }
 }
 header {
-  background-image: url('../img/header-bg.jpg');
+  background-image: url('../img/header-bg2.jpg');
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
