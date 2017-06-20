@@ -25,6 +25,7 @@
    
     <!-- Theme CSS -->
     <link href="css/agency.css" rel="stylesheet">
+    <link href="css/funkyradio.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -322,7 +323,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                         <p>por ano</p>
                         <!--<p>88,90 OFF<p>-->
                         <p>
-                            <a onclick="$('#btnPagar6M').click();" class="btn btn-primary">Assinar</a>
+                            <a onclick="$('#btnPagar12M').click();" class="btn btn-primary">Assinar</a>
                             
                             <a class="btn btn-default" role="button" data-toggle="collapse" href="#detalhesSemestre" 
                                aria-expanded="false" aria-controls="detalhesSemestre">Detalhes</a>
@@ -384,6 +385,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
                                 <button type="submit" class="btn btn-xl">Enviar</button>
+                                <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalQuest1">Preencher formulario</button>-->
                             </div>
                         </div>
                     </form>
@@ -416,6 +418,68 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
         </div>
     </footer>
 
+    <!-- ########################## -->
+    <!-- ### MODAL QUESTIONARIO ### -->
+    <!-- ########################## -->
+    <div id="modalQuest1" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Já investiu ou ainda investe?</h4>
+            </div>
+            <div class="modal-body">
+                <div class="funkyradio">
+                    <div class="funkyradio-primary">
+                        <input type="radio" name="radio" id="radio"/>
+                        <label for="radio">Sim</label>
+                    </div>
+                    <div class="funkyradio-primary">
+                        <input type="radio" name="radio" id="radio2"/>
+                        <label for="radio2">Não</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-next">Continuar</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="modalQuest2" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Qual seu nível de conhecimento e experiência (0 a 10, onde 0 é nenhum conhecimento e 10 total conhecimento e experiência) em:</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                    <div class="input-group">
+                        <span class="input-group-addon" title="Price">Renda fixa:</span>
+                        <input type="number" required="required" class="form-control" value="0" max=10>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" title="Price">Renda variável:</span>
+                        <input type="number" required="required" class="form-control" value="0" max=10>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" title="Price">Derivativos:</span>
+                        <input type="number" required="required" class="form-control" value="0" max=10>
+                    </div>
+                    </form>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-prev">Voltar</button>
+                <button type="button" class="btn btn-primary btn-next">Continuar</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <form action="https://pagseguro.uol.com.br/pre-approvals/request.html" method="post">
         <input type="hidden" name="code" value="A207D21584844516643A7F8C2F46BF44">
         <input type="hidden" name="iot" value="button">
@@ -424,7 +488,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
     <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
         <input type="hidden" name="code" value="FEA75860C0C0EA4004FF8FAD6EFCA628">
         <input type="hidden" name="iot" value="button">
-        <input id="btnPagar6M" class="hidden" type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!">
+        <input id="btnPagar12M" class="hidden" type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!">
     </form>
 
     <!-- jQuery -->
@@ -442,6 +506,9 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
 
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
+
+    <!-- Modals JavaScript -->
+    <script src="js/modals.js"></script>
 
 </body>
 
