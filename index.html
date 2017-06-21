@@ -357,6 +357,12 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
 
         <div class="row" style="margin-top: 25px">
             <div class="col-lg-8 col-lg-offset-2 text-center">
+                <p style="font-size: 16px;">O que acha de responder algumas perguntas para adiantar a avaliação do seu perfil?</p>
+                <p style="font-size: 16px;">É rapidinho, não leva nem um minuto!</p>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuest1">Preencher formulario</button>
+                <br>
+                <br>
                 <p style="font-size: 26px;">
                     Transforme seus hábitos com a W<span style="color:#2ecc71">ee</span>k Investment News!
                 </p>
@@ -401,7 +407,6 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
                                 <button type="submit" class="btn btn-xl">Enviar</button>
-                                <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalQuest1">Preencher formulario</button>-->
                             </div>
                         </div>
                     </form>
@@ -434,87 +439,87 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
         </div>
     </footer>
 
-    <!-- ########################## -->
-    <!-- ### MODAL QUESTIONARIO ### -->
-    <!-- ########################## -->
+    <!-- ########################### -->
+    <!-- ### MODAIS QUESTIONARIO ### -->
+    <!-- ########################### -->
     <form id="formQuestionario" class="form-horizontal" method="POST">
-        <div id="modalQuest1" class="modal fade" tabindex="-1" role="dialog">
+        <div id="modalQuest1" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Já investiu ou ainda investe?</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="jaInvestiu" value="false">
-                                    Não
-                                </label>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Já investiu ou ainda investe?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="jaInvestiu" value="false">
+                                        Não
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="jaInvestiu" value="true">
-                                    Sim
-                                </label>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="jaInvestiu" value="true">
+                                        Sim
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary btn-next">Continuar</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-next">Continuar</button>
+                    </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <div id="modalQuest2" class="modal fade" tabindex="-1" role="dialog">
+        <div id="modalQuest2" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Já teve ou tem uma conta em uma corretora?</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="possuiConta" value="false">
-                                    Não
-                                </label>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Já teve ou tem uma conta em uma corretora?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="possuiConta" value="false">
+                                        Não
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="possuiConta" value="true">
+                                        Sim
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="possuiConta" value="true">
-                                    Sim
-                                </label>
-                            </div>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-prev">Voltar</button>
+                        <button type="button" class="btn btn-primary btn-next">Continuar</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary btn-prev">Voltar</button>
-                    <button type="button" class="btn btn-primary btn-next">Continuar</button>
-                </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <div id="modalQuest3" class="modal fade" tabindex="-1" role="dialog">
+        <div id="modalQuest3" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -522,7 +527,6 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                         <h4 class="modal-title">Qual seu nível de conhecimento e experiência (0 a 10, onde 0 é nenhum conhecimento e 10 total conhecimento e experiência) em:</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal">
                         <div class="input-group">
                             <span class="input-group-addon" title="Price">Renda fixa:</span>
                             <input id="nvlRendaFixa" type="range" class="form-control" name="nvlRendaFixa" min="0" max="10" value="0"
@@ -541,99 +545,277 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                                 oninput="nvlDerivativosOut.value = nvlDerivativos.value">
                             <output id="nvlDerivativosOut"class="input-group-addon">0</output>
                         </div>
-                        </form>
                     </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary btn-prev">Voltar</button>
-                    <button type="button" class="btn btn-primary btn-next">Continuar</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-prev">Voltar</button>
+                        <button type="button" class="btn btn-primary btn-next">Continuar</button>
+                    </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <div id="modalQuest4" class="modal fade" tabindex="-1" role="dialog">
+        <div id="modalQuest4" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Pretende aplicar uma quantia fixa ou está disposto a investir mensalmente?</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="tipoAplicacao" value="fixa">
-                                    Aplicação fixa
-                                </label>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Pretende aplicar uma quantia fixa ou está disposto a investir mensalmente?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tipoAplicacao" value="fixa">
+                                        Aplicação fixa
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tipoAplicacao" value="mensal">
+                                        Aplicação mensal
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="tipoAplicacao" value="mensal">
-                                    Aplicação mensal
-                                </label>
-                            </div>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-prev">Voltar</button>
+                        <button type="button" class="btn btn-primary btn-next">Continuar</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary btn-prev">Voltar</button>
-                    <button type="button" class="btn btn-primary btn-next">Continuar</button>
-                </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <div id="modalQuest5" class="modal fade" tabindex="-1" role="dialog">
+        <div id="modalQuest5" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Qual perfil de investidor mais se parece com você?</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="tipoInvestidor" value="conservador">
-                                    Conservador
-                                </label>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Qual perfil de investidor mais se parece com você?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tipoInvestidor" value="conservador">
+                                        Conservador
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tipoInvestidor" value="moderado">
+                                        Moderado
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tipoInvestidor" value="agressivo">
+                                        Agressivo
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="tipoInvestidor" value="moderado">
-                                    Moderado
-                                </label>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-prev">Voltar</button>
+                        <button type="button" class="btn btn-primary btn-next">Continuar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="modalQuest6" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">O seu investimento tem como objetivo o curto, médio ou longo prazo? (Lembrando que aplicações a longo, em qualquer situação, rendem muito mais)</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tempoInvestimento" value="curto">
+                                        Curto prazo (1 ano)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tempoInvestimento" value="medio">
+                                        Médio prazo (1 a 5 anos)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tempoInvestimento" value="longo">
+                                        Longo prazo (mais de 5 anos)
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="input-group">
-                                <label>
-                                    <input type="radio" name="tipoInvestidor" value="agressivo">
-                                    Agressivo
-                                </label>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-prev">Voltar</button>
+                        <button type="button" class="btn btn-primary btn-next">Continuar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="modalQuest7" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Qual o melhor meio para contato?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tipoContato" value="telefone">
+                                        Telefone
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tipoContato" value="email">
+                                        Email
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="tipoContato" value="outro">
+                                        Outro
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary btn-prev">Voltar</button>
-                    <button type="button" class="btn btn-primary btn-next">Continuar</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-prev">Voltar</button>
+                        <button type="button" class="btn btn-primary btn-next">Continuar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="modalQuest8" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Como conheceu a Week Investments News?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="comoConheceu" value="facebook">
+                                        Facebook
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="comoConheceu" value="siteBusca">
+                                        Site de buscas
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="comoConheceu" value="indicacao">
+                                        Indicação
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="radio" name="comoConheceu" value="outro">
+                                        Outro
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-prev">Voltar</button>
+                        <button type="button" class="btn btn-primary btn-next" onclick="sendForm();">Enviar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="modalQuest8" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Obrigado por responder!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <span>Agradecemos o seu tempo e sua contribuição.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
@@ -661,7 +843,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
     <script src="js/contact_me.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/agency.min.js"></script>
+    <script src="js/agency.js"></script>
 
     <!-- Modals JavaScript -->
     <script src="js/modals.js"></script>

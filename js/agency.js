@@ -59,5 +59,31 @@ jQuery(document).ready(function($) {
                 this.previousTop = currentTop;
             });
     }
-
 });
+
+function sendForm() {
+  var obj = objectifyForm($("#formQuestionario").serializeArray());
+  console.log('Questionario a ser enviado: ' + JSON.stringify(obj));
+  $.ajax({
+      url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
+      headers: { 
+          'Accept': 'application/json',
+          'Content-Type': 'application/json' 
+      },
+      cache: false,
+      type: 'POST',
+      data : JSON.stringify(obj),
+      success: function(res) {
+          console.log('Envio concluido!');
+      }
+  });
+}
+
+function objectifyForm(formArray) {//serialize data function
+
+  var returnArray = {};
+  for (var i = 0; i < formArray.length; i++){
+    returnArray[formArray[i]['name']] = formArray[i]['value'];
+  }
+  return returnArray;
+}
