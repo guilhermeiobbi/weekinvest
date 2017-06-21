@@ -63,27 +63,44 @@ jQuery(document).ready(function($) {
 
 function sendForm() {
   var obj = objectifyForm($("#formQuestionario").serializeArray());
-  console.log('Questionario a ser enviado: ' + JSON.stringify(obj));
+  
+  var payload = JSON.stringify(obj);
+  console.log('Questionario a ser enviado: ' + payload);
   $.ajax({
-      url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
+    //   url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
+      url: 'http://localhost:8080/api/v1/questionario',
       headers: { 
           'Accept': 'application/json',
           'Content-Type': 'application/json' 
       },
       cache: false,
       type: 'POST',
-      data : JSON.stringify(obj),
+      data : payload,
       success: function(res) {
           console.log('Envio concluido!');
       }
   });
 }
 
-function objectifyForm(formArray) {//serialize data function
-
+//serialize data function
+function objectifyForm(formArray) {
   var returnArray = {};
+
   for (var i = 0; i < formArray.length; i++){
     returnArray[formArray[i]['name']] = formArray[i]['value'];
   }
+  returnArray.investimentosRealizados = montaArrayCheckBox();
+
   return returnArray;
+}
+
+function montaArrayCheckBox() {
+    var arr = $.map($('input:checkbox:checked'), function(e,i) {
+      return e.value;
+    });
+    if(arr.includes('on')) {
+        var index = arr.indexOf('on');
+        arr[index] = $('#outroInvestimentoRealizado').val();
+    }
+    return arr;
 }

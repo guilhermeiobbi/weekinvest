@@ -360,7 +360,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                 <p style="font-size: 16px;">O que acha de responder algumas perguntas para adiantar a avaliação do seu perfil?</p>
                 <p style="font-size: 16px;">É rapidinho, não leva nem um minuto!</p>
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuest1">Preencher formulario</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuest">Preencher formulario</button>
                 <br>
                 <br>
                 <p style="font-size: 26px;">
@@ -443,7 +443,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
     <!-- ### MODAIS QUESTIONARIO ### -->
     <!-- ########################### -->
     <form id="formQuestionario" class="form-horizontal" method="POST">
-        <div id="modalQuest1" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+        <div id="modalQuest" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -455,7 +455,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="jaInvestiu" value="false">
+                                        <input onclick="$('#modalQuest1').prop('id','modal_uest1');" type="radio" name="jaInvestiu" value="false">
                                         Não
                                     </label>
                                 </div>
@@ -465,7 +465,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-4">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="jaInvestiu" value="true">
+                                        <input onclick="$('#modal_uest1').prop('id','modalQuest1');" type="radio" name="jaInvestiu" value="true">
                                         Sim
                                     </label>
                                 </div>
@@ -475,6 +475,96 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-next">Continuar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="modalQuest1" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Em que você já investiu?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="checkbox" name="investimentosRealizados" value="rendaFixa_1">
+                                        Renda fixa (Tesouro Direto e CDB)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="checkbox" name="investimentosRealizados" value="rendaFixa_2">
+                                        Renda fixa (Debentures, COE, entre outros)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="checkbox" name="investimentosRealizados" value="acoes">
+                                        Ações
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="checkbox" name="investimentosRealizados" value="derivativos">
+                                        Derivativos (Futuros, Opções, Swaps)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="checkbox" name="investimentosRealizados" value="commodities">
+                                        Commodities
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="checkbox" name="investimentosRealizados" value="fundos">
+                                        Fundos de investimentos e fundos imobiliários
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <label>
+                                        <input onchange="$('#outroInvestimentoRealizado').prop('disabled', !$(this).is(':checked'));" type="checkbox">
+                                        Outro
+                                        <input type="text" id="outroInvestimentoRealizado" name="investimentosRealizados" disabled>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-prev">Voltar</button>
                         <button type="button" class="btn btn-primary btn-next">Continuar</button>
                     </div>
                 </div><!-- /.modal-content -->
@@ -493,18 +583,19 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="possuiConta" value="false">
+                                        <input onchange="$('#corretora').prop('disabled', true);" type="radio" name="possuiConta" value="false">
                                         Não
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="possuiConta" value="true">
+                                        <input onchange="$('#corretora').prop('disabled', false);" type="radio" name="possuiConta" value="true">
                                         Sim
+                                        <input type="text" id="corretora" name="nomeCorretora" placeholder="Qual?" disabled>
                                     </label>
                                 </div>
                             </div>
@@ -528,22 +619,22 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                     </div>
                     <div class="modal-body">
                         <div class="input-group">
-                            <span class="input-group-addon" title="Price">Renda fixa:</span>
+                            <span class="input-group-addon" title="Price" style="min-width: 127px;">Renda fixa:</span>
                             <input id="nvlRendaFixa" type="range" class="form-control" name="nvlRendaFixa" min="0" max="10" value="0"
                                 oninput="nvlRendaFixaOut.value = nvlRendaFixa.value">
-                            <output id="nvlRendaFixaOut"class="input-group-addon">0</output>
+                            <output id="nvlRendaFixaOut"class="input-group-addon" style="min-width: 34px;">0</output>
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon" title="Price">Renda variável:</span>
                             <input id="nvlRendaVariavel" type="range" class="form-control" name="nvlRendaVariavel" min="0" max="10" value="0"
                                 oninput="nvlRendaVariavelOut.value = nvlRendaVariavel.value">
-                            <output id="nvlRendaVariavelOut"class="input-group-addon">0</output>
+                            <output id="nvlRendaVariavelOut"class="input-group-addon" style="min-width: 34px;">0</output>
                         </div>
                         <div class="input-group">
-                            <span class="input-group-addon" title="Price">Derivativos:</span>
+                            <span class="input-group-addon" title="Price" style="min-width: 127px;">Derivativos:</span>
                             <input id="nvlDerivativos" type="range" class="form-control" name="nvlDerivativos" min="0" max="10" value="0"
                                 oninput="nvlDerivativosOut.value = nvlDerivativos.value">
-                            <output id="nvlDerivativosOut"class="input-group-addon">0</output>
+                            <output id="nvlDerivativosOut"class="input-group-addon" style="min-width: 34px;">0</output>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -701,8 +792,9 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="tipoContato" value="telefone">
+                                        <input onchange="$('input[id^=contato]').each(function () { this.disabled=true; }); $('#contatoTel').prop('disabled', !$(this).is(':checked'));" type="radio" name="tipoContato" value="telefone">
                                         Telefone
+                                        <input id="contatoTel" name="contato" disabled>
                                     </label>
                                 </div>
                             </div>
@@ -711,18 +803,20 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="tipoContato" value="email">
+                                        <input onchange="$('input[id^=contato]').each(function () { this.disabled=true; }); $('#contatoEmail').prop('disabled', !$(this).is(':checked'));" type="radio" name="tipoContato" value="email">
                                         Email
+                                        <input id="contatoEmail" name="contato" disabled>
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="tipoContato" value="outro">
+                                        <input onchange="$('input[id^=contato]').each(function () { this.disabled=true; }); $('#contatoOutro').prop('disabled', !$(this).is(':checked'));" type="radio" name="tipoContato" value="outro">
                                         Outro
+                                        <input id="contatoOutro" name="contato" disabled>
                                     </label>
                                 </div>
                             </div>
@@ -749,7 +843,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="comoConheceu" value="facebook">
+                                        <input onchange="$('#conheceuOutro').prop('disabled', true);" type="radio" name="comoConheceu" value="facebook">
                                         Facebook
                                     </label>
                                 </div>
@@ -759,7 +853,7 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="comoConheceu" value="siteBusca">
+                                        <input onchange="$('#conheceuOutro').prop('disabled', true);" type="radio" name="comoConheceu" value="siteBusca">
                                         Site de buscas
                                     </label>
                                 </div>
@@ -769,18 +863,19 @@ Dividimos nossos clientes conforme o nível de conhecimento que o mesmo já poss
                             <div class="col-lg-4">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="comoConheceu" value="indicacao">
+                                        <input onchange="$('#conheceuOutro').prop('disabled', true);" type="radio" name="comoConheceu" value="indicacao">
                                         Indicação
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="input-group">
                                     <label>
-                                        <input type="radio" name="comoConheceu" value="outro">
+                                        <input onchange="$('#conheceuOutro').prop('disabled', false);" name="comoConheceu" type="radio">
                                         Outro
+                                        <input type="text" id="conheceuOutro" name="comoConheceu" disabled>
                                     </label>
                                 </div>
                             </div>
