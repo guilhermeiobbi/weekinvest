@@ -61,14 +61,37 @@ jQuery(document).ready(function($) {
     }
 });
 
-function sendForm() {
-  var obj = objectifyForm($("#formQuestionario").serializeArray());
+function enviarMensagem() {
+    var obj = objectifyForm($("#formContato").serializeArray());
   
+    var payload = JSON.stringify(obj);
+    console.log('JSON a ser enviado: ' + payload);
+    $.ajax({
+        // url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
+        url: 'http://localhost:8080/api/v1/mensagem',
+        headers: { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json' 
+        },
+        cache: false,
+        type: 'POST',
+        data : payload,
+        success: function(res) {
+            console.log('Envio concluido!');
+            $('#alertMensagemEnviada').addClass('in');
+        }
+    });
+}
+
+function enviarQuestionario() {
+  var obj = objectifyForm($("#formQuestionario").serializeArray());
+  obj.investimentosRealizados = montaArrayCheckBox();
+
   var payload = JSON.stringify(obj);
   console.log('Questionario a ser enviado: ' + payload);
   $.ajax({
-      url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
-    //   url: 'http://localhost:8080/api/v1/questionario',
+    //   url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
+      url: 'http://localhost:8080/api/v1/questionario',
       headers: { 
           'Accept': 'application/json',
           'Content-Type': 'application/json' 
@@ -89,7 +112,6 @@ function objectifyForm(formArray) {
   for (var i = 0; i < formArray.length; i++){
     returnArray[formArray[i]['name']] = formArray[i]['value'];
   }
-  returnArray.investimentosRealizados = montaArrayCheckBox();
 
   return returnArray;
 }
