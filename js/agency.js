@@ -62,10 +62,10 @@ jQuery(document).ready(function($) {
 });
 
 function enviarMensagem() {
+    $('#btnEnviarMensagem').prop('disabled', true);
     var obj = objectifyForm($("#formContato").serializeArray());
-  
+    
     var payload = JSON.stringify(obj);
-    console.log('JSON a ser enviado: ' + payload);
     $.ajax({
         url: 'https://weekinvest.herokuapp.com/api/v1/mensagem',
         // url: 'http://localhost:8080/api/v1/mensagem',
@@ -76,33 +76,36 @@ function enviarMensagem() {
         cache: false,
         type: 'POST',
         data : payload,
-        success: function(res) {
-            console.log('Envio concluido!');
+        // success: function() {
+        //     $('#alertMensagemEnviada').addClass('in');
+        // },
+        // error: function () {
+        // }, 
+        complete: function () {
             $('#alertMensagemEnviada').addClass('in');
+            $('#btnEnviarMensagem').prop('disabled', false);
         }
     });
 }
 
 function enviarQuestionario() {
-  var obj = objectifyForm($("#formQuestionario").serializeArray());
-  obj.investimentosRealizados = montaArrayCheckBox();
+    $("#nomeQuestionario").text($("input[name='nomeQuestionario']").val());
+    
+    var obj = objectifyForm($("#formQuestionario").serializeArray());
+    obj.investimentosRealizados = montaArrayCheckBox();
 
-  var payload = JSON.stringify(obj);
-  console.log('Questionario a ser enviado: ' + payload);
-  $.ajax({
-      url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
-      // url: 'http://localhost:8080/api/v1/questionario',
-      headers: { 
-          'Accept': 'application/json',
-          'Content-Type': 'application/json' 
-      },
-      cache: false,
-      type: 'POST',
-      data : payload,
-      success: function(res) {
-          console.log('Envio concluido!');
-      }
-  });
+    var payload = JSON.stringify(obj);
+    $.ajax({
+        url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
+        // url: 'http://localhost:8080/api/v1/questionario',
+        headers: { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json' 
+        },
+        cache: false,
+        type: 'POST',
+        data : payload
+    });
 }
 
 //serialize data function
