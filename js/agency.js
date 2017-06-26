@@ -67,8 +67,8 @@ function enviarMensagem() {
     
     var payload = JSON.stringify(obj);
     $.ajax({
-        url: 'https://weekinvest.herokuapp.com/api/v1/mensagem',
-        // url: 'http://localhost:8080/api/v1/mensagem',
+        url: 'https://weekinvest.herokuapp.com/api/v1/mensagens',
+        // url: 'http://localhost:8080/api/v1/mensagens',
         headers: { 
             'Accept': 'application/json',
             'Content-Type': 'application/json' 
@@ -96,8 +96,8 @@ function enviarQuestionario() {
 
     var payload = JSON.stringify(obj);
     $.ajax({
-        url: 'https://weekinvest.herokuapp.com/api/v1/questionario',
-        // url: 'http://localhost:8080/api/v1/questionario',
+        url: 'https://weekinvest.herokuapp.com/api/v1/questionarios',
+        // url: 'http://localhost:8080/api/v1/questionarios',
         headers: { 
             'Accept': 'application/json',
             'Content-Type': 'application/json' 
