@@ -63,6 +63,7 @@ jQuery(document).ready(function($) {
 
 function enviarMensagem() {
     $('#btnEnviarMensagem').prop('disabled', true);
+    $('#btnEnviarMensagem').text("Enviando...");
     var obj = objectifyForm($("#formContato").serializeArray());
     
     var payload = JSON.stringify(obj);
@@ -83,6 +84,7 @@ function enviarMensagem() {
         // }, 
         complete: function () {
             $('#alertMensagemEnviada').addClass('in');
+            $('#btnEnviarMensagem').text("Enviar");
             $('#btnEnviarMensagem').prop('disabled', false);
         }
     });
